@@ -312,6 +312,14 @@ au BufRead,BufNewFile *  setfiletype txt
 :inoremap ] <c-r>=ClosePair(']')<CR>
 :inoremap " ""<ESC>i
 :inoremap ' ''<ESC>i
+
+inoremap <c-h> <left>
+inoremap <c-l> <right>
+inoremap <c-j> <c-o>gj
+inoremap <c-k> <c-o>gk
+
+
+
 function! ClosePair(char)
 	if getline('.')[col('.') - 1] == a:char
 		return "\<Right>"
@@ -322,6 +330,12 @@ endfunction
 filetype plugin indent on 
 "打开文件类型检测, 加了这句才可以用智能补全
 set completeopt=longest,menu
+
+
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
